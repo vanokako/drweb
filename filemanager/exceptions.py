@@ -1,0 +1,2 @@
+class SaveToDataBaseError(Exception):
+    pass

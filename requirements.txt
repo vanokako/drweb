@@ -1,0 +1,6 @@
+alembic==1.8.1
+flask==2.2.2
+Flask-API==3.0.post1
+Flask-HTTPAuth==4.7.0
+python-dotenv==0.21.0
+SQLAlchemy==1.4.44
