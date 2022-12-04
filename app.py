@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from flask import Blueprint, Flask
+from flask import Flask
 
 from filemanager import routers
 
