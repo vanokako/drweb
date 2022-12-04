@@ -58,7 +58,7 @@ def save_file_to_dir(mapper, connection, target):
 
 
 @event.listens_for(Files, 'before_delete')
-def save_file_to_dir(mapper, connection, target):
+def delete_file_from_dir(mapper, connection, target):
     path = pathlib.Path(target.file_dir)
     path_to_file = path / target.hash_name
     path_to_file.unlink()

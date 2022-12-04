@@ -3,7 +3,11 @@ from flask_api import status
 from flask_httpauth import HTTPBasicAuth
 
 from db_utils import authentication
-from filemanager.processors import save_file, delete_from_storage, download_file_from_storage
+from filemanager.processors import (
+    save_file,
+    delete_from_storage,
+    download_file_from_storage
+)
 from filemanager.exceptions import SaveToDataBaseError
 
 auth = HTTPBasicAuth()
