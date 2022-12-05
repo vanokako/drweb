@@ -1,4 +1,3 @@
-import hashlib
 import pathlib
 import os
 
@@ -8,13 +7,9 @@ from sqlalchemy import (
     ForeignKey, event, UniqueConstraint
 )
 
+from db_utils.processors import create_hash
+
 from db_utils.database import Base
-
-
-def create_hash(context):
-    name = context.get_current_parameters()["file_name"]
-    hash_name = hashlib.md5(name.encode())
-    return hash_name.hexdigest()
 
 
 class Users(Base):

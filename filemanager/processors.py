@@ -1,8 +1,7 @@
 import pathlib
 from sqlalchemy import exc, and_
-import hashlib
 
-from db_utils import database, models
+from db_utils import database, models, processors
 from filemanager.exceptions import SaveToDataBaseError
 
 
@@ -13,7 +12,7 @@ def remove_file(file: models.Files):
 
 
 def save_file(uploaded_file, user):
-    hash_name = hashlib.md5(uploaded_file.filename.encode()).hexdigest()
+    hash_name = processors.create_hash()
 
     file_model = models.Files(
         file_name=uploaded_file.filename,
